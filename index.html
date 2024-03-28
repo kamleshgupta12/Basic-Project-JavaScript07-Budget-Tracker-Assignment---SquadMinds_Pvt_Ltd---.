@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDGET TRACKER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-container">
+            <div class="total-budget-box">
+                <div class="total-budget">
+                    <p>Total Budget</p>
+                    <span id="totalBudgetAmount">00</span>
+                </div>
+                <div class="remaining-budget">
+                    <p>Remaining Budget</p>
+                    <span id="remainingBudgetAmount">00</span>
+                </div>
+                <div class="expense-budget">
+                    <p>Expense Budget</p>
+                    <span id="expenseBudgetAmount">00</span>
+                </div>
+            </div>
+            <div class="budget-input">
+                <form class="input-budget">
+                    <label>Enter Budget</label>
+                    <input type="number" name="" id="inputBudget" placeholder="Enter Budget..">
+                    <button id="budgetBtn">Submit</button>
+                </form>
+                <form class="input-category">
+                    <label>Enter Category</label>
+                    <input type="text" name="" id="Category" placeholder="Enter Expense...">
+                    <button id="categoryBtn">Submit</button>
+                </form>
+            </div>
+            <form class="select-item-box">
+                <label>Enter Expense Amount </label>
+                <input type="number" name="" id="inputAmount">
+                <label>Select Category</label>
+                <select name="" id="selectItem">
+                    <option id="optionValue"></option>
+                </select>
+                <label>Date</label>
+                <input type="date" name="" id="dateData">
+                <button id="amountBtn">Submit</button>
+            </form>
+            <div class="budget-list">
+                <table  class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category Name</th>
+                            <th> Amount</th>
+                            <th> Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
+

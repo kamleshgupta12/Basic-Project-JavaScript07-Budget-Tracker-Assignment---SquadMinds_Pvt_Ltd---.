@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(221, 221, 250);
+    height: 100vh;
+    width: 100%;
+}
+
+.content-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-budget-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.remaining-budget,
+.total-budget,
+.expense-budget {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: rgb(147, 249, 153);
+}
+
+.budget-input {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    gap: 5px;
+}
+
+.input-budget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid;
+    padding: 1rem;
+    width: 50%;
+    gap: 8px;
+}
+
+.input-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid;
+    padding: 1rem;
+    width: 50%;
+    gap: 8px;
+    
+}
+#inputBudget{
+padding: 10px;
+border: none;
+outline: none;
+border-radius: 10px;
+}
+#Category{
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    }
+    #budgetBtn{
+        background-color: rgb(147, 249, 153);
+        border: none;
+        padding: 8px;
+        width: 90px;
+        border-radius: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    #categoryBtn{
+        background-color: rgb(147, 249, 153);
+        border: none;
+        padding: 8px;
+        width: 90px;
+        border-radius: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+    }
+.select-item-box{
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 10px;
+}
+.budget-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 1rem;
+    border: 1px solid black;
+    width: 500px;
+   
+}
+.table{
+  border-collapse: collapse;
+
+}
+th, td{
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+th{
+    border: 2px solid;
+    padding: 0 20px;
+    text-align: center;
+    width: 100%;
+}
