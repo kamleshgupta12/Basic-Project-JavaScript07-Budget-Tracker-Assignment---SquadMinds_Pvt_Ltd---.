@@ -25,17 +25,20 @@ let arr = [];
 budgetBtn.addEventListener('click', addAmount);
 function addAmount(e) {
     e.preventDefault();
+    if(enterBudget.value==""){
+        return alert("please submit a valid number")
+    }
     store = enterBudget.value;
     arr.push(parseInt(store));
-    console.log(arr);
+    // console.log(arr);
 
     sumOfArr = arr.reduce((accum, curr) => {
         return accum + curr;
 
     });
-
     totalAmount.innerHTML = sumOfArr;
     enterBudget.value = "";
+    console.log(sumOfArr);
 
 }
 
@@ -49,7 +52,6 @@ amountBtn.addEventListener('click', addExpense);
 function addExpense(e) {
     e.preventDefault();
     storeExpense = enterAmount.value;
-
     expenseArr.push(parseInt(storeExpense));
     console.log(expenseArr);
 
@@ -68,7 +70,7 @@ function addExpense(e) {
 
 
 
-        if (expenseAmountAdd < arr)
+        if (expenseAmountAdd < arr) 
             expenseAmount.innerHTML = expenseAmountAdd;
 
 
@@ -77,23 +79,27 @@ function addExpense(e) {
     const dateData = d.value;
     const tr = document.createElement("tr");
     console.log(dateData);
-    if(optionValue.value && d.value !==0)
- 
-    tr.innerHTML = `<td>${dateData}</td>
+    if (optionValue.value && expenseAmountAdd && d.value !== 0)
+
+        tr.innerHTML = `<td>${dateData}</td>
         <td>${op}</td>
         <td>${storeExpense}</td>
-<td><button>Delete</button></td>
-<td><button>Update</button></td>
+<td><button onClick="deleteBtn(this)" id="delete">Delete</button></td>
+<td><button onClick="updateData(this)">Update</button></td>
 `;
     tableBody.appendChild(tr);
     d.value = "";
     optionValue.value = "";
 
-
 }
+
 categoryBtn.addEventListener('click', addCategorys);
 function addCategorys(e) {
     e.preventDefault();
+    if(CategoryInput.value ==""){
+        return alert("Please Enter a category..")
+    }
+
     let category = CategoryInput.value;
     const selectItem = document.getElementById("selectItem");
     const option = document.createElement("option");
@@ -104,3 +110,21 @@ function addCategorys(e) {
     CategoryInput.value = "";
 }
 
+
+// <<<<<<<<<<<<delete table row data >>>>>>>>>>>>>>>
+
+function deleteBtn(e){
+    let Row = e.parentNode.parentNode;
+    // console.log(Row);
+    Row.parentNode.removeChild(Row);
+
+}
+
+// <<<<<<<<<<<<<<<<<update table row data >>>>>>>>>>>>>>>
+
+function updateData(e){
+    let updateRow = e.parentNode.parentNode;
+    const updateModal = document.querySelector(".updateModal");
+    updateModal.classList.add("display");
+
+}
