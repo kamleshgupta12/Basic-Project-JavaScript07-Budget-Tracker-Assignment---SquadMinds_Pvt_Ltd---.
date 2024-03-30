@@ -13,11 +13,8 @@ const CategoryInput = document.getElementById("Category");
 const tableBody = document.getElementById("tableBody");
 const d = document.getElementById("dateData");
 
-
 let expenseAmountAdd = 0;
 let sumOfArr = 0;
-
-
 
 // Budget  SubmitEvent 
 let store;
@@ -25,7 +22,7 @@ let arr = [];
 budgetBtn.addEventListener('click', addAmount);
 function addAmount(e) {
     e.preventDefault();
-    if(enterBudget.value==""){
+    if (enterBudget.value == "") {
         return alert("please submit a valid number")
     }
     store = enterBudget.value;
@@ -34,16 +31,11 @@ function addAmount(e) {
 
     sumOfArr = arr.reduce((accum, curr) => {
         return accum + curr;
-
     });
     totalAmount.innerHTML = sumOfArr;
     enterBudget.value = "";
     console.log(sumOfArr);
-
 }
-
-
-
 // expenses submit 
 
 let storeExpense;
@@ -68,11 +60,8 @@ function addExpense(e) {
     if (remaining)
         // console.log(remaining);
 
-
-
-        if (expenseAmountAdd < arr) 
+        if (expenseAmountAdd < arr)
             expenseAmount.innerHTML = expenseAmountAdd;
-
 
     const optionValue = document.getElementById("selectItem");
     const op = optionValue.value;
@@ -85,7 +74,7 @@ function addExpense(e) {
         <td>${op}</td>
         <td>${storeExpense}</td>
 <td><button onClick="deleteBtn(this)" id="delete">Delete</button></td>
-<td><button onClick="updateData(this)">Update</button></td>
+<td><button onClick="updateData(this)" id="ubtn">Update</button></td>
 `;
     tableBody.appendChild(tr);
     d.value = "";
@@ -96,7 +85,7 @@ function addExpense(e) {
 categoryBtn.addEventListener('click', addCategorys);
 function addCategorys(e) {
     e.preventDefault();
-    if(CategoryInput.value ==""){
+    if (CategoryInput.value == "") {
         return alert("Please Enter a category..")
     }
 
@@ -109,22 +98,23 @@ function addCategorys(e) {
     // console.log(category);
     CategoryInput.value = "";
 }
-
-
 // <<<<<<<<<<<<delete table row data >>>>>>>>>>>>>>>
-
-function deleteBtn(e){
+function deleteBtn(e) {
     let Row = e.parentNode.parentNode;
     // console.log(Row);
     Row.parentNode.removeChild(Row);
-
 }
 
 // <<<<<<<<<<<<<<<<<update table row data >>>>>>>>>>>>>>>
-
-function updateData(e){
+const updateModal = document.querySelector(".updateModal");
+function updateData(e) {
     let updateRow = e.parentNode.parentNode;
-    const updateModal = document.querySelector(".updateModal");
     updateModal.classList.add("display");
+}
+const xBtn = document.getElementById("x");
+xBtn.addEventListener('click', removed);
 
+function removed() {
+    updateModal.classList.remove("display");
+    // console.log(updateModal);
 }
