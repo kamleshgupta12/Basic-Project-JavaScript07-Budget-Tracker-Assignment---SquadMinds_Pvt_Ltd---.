@@ -16,7 +16,7 @@ const d = document.getElementById("dateData");
 let expenseAmountAdd = 0;
 let sumOfArr = 0;
 
-// Budget  SubmitEvent 
+// Budget  SubmitEvent
 let store;
 let arr = [];
 budgetBtn.addEventListener('click', addAmount);
@@ -53,7 +53,6 @@ function addExpense(e) {
     }
     enterAmount.value = "";
     // <<<<<<<<<<<<<<<<<<<<remaining balance >>>>>>>>>>>>>>>>>>>>>>>
-
     let remaining = sumOfArr - expenseAmountAdd;
     if (remaining > 0)
         remainingAmount.innerHTML = remaining;
