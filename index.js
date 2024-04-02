@@ -22,7 +22,7 @@ let arr = [];
 budgetBtn.addEventListener('click', addAmount);
 function addAmount(e) {
     e.preventDefault();
-    if (enterBudget.value == "") {
+    if (enterBudget.value == "" || enterBudget.value <= 0) {
         return alert("please submit a valid number")
     }
     store = enterBudget.value;
@@ -43,6 +43,7 @@ let expenseArr = [];
 amountBtn.addEventListener('click', addExpense);
 function addExpense(e) {
     e.preventDefault();
+
     storeExpense = enterAmount.value;
     expenseArr.push(parseInt(storeExpense));
     console.log(expenseArr);
@@ -67,7 +68,7 @@ function addExpense(e) {
     const dateData = d.value;
     const tr = document.createElement("tr");
     console.log(dateData);
-    if (optionValue.value && expenseAmountAdd && d.value !== 0)
+    if (optionValue.value && d.value !== 0)
 
         tr.innerHTML = `<td>${dateData}</td>
         <td>${op}</td>
@@ -85,7 +86,7 @@ categoryBtn.addEventListener('click', addCategorys);
 function addCategorys(e) {
     e.preventDefault();
     if (CategoryInput.value == "") {
-        return alert("Please Enter a category..")
+        return alert("Please Enter a vailid category....")
     }
 
     let category = CategoryInput.value;
